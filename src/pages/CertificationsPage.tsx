@@ -1,6 +1,7 @@
-import { motion } from 'framer-motion';
-import { Calendar, Award, ExternalLink } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Calendar, Award, ExternalLink, Eye, Download } from 'lucide-react';
 import { PageLayout } from '../components/PageLayout';
+import { useState } from 'react';
 // Update the path to match your project's asset structure
 import azureCertImage from '../assets/certificates/general/azure-fundamentals-az900.png';
 image: "/certificates/general/AKS_Course_Completion_Certificate_.png"
@@ -196,13 +197,53 @@ const item = {
 };
 
 export function CertificationsPage() {
+  const [previewUrl, setPreviewUrl] = useState<string | null>(null);
+
+  const modalVariants = {
+    hidden: { opacity: 0, scale: 0.8 },
+    visible: { opacity: 1, scale: 1 },
+    exit: { opacity: 0, scale: 0.8 }
+  };
+
   return (
     <PageLayout title="My Certifications">
+      <AnimatePresence>
+        {previewUrl && (
+          <motion.div
+            className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <motion.div
+              variants={modalVariants}
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              className="relative w-11/12 max-w-4xl bg-white dark:bg-gray-900 p-6 rounded-lg shadow-lg"
+            >
+              <button
+                onClick={() => setPreviewUrl(null)}
+                className="absolute top-2 right-2 text-gray-700 dark:text-gray-300 text-lg font-bold"
+              >
+                ✕
+              </button>
+              <img
+                src={previewUrl}
+                alt="Certificate Preview"
+                className="w-full max-h-[80vh] object-contain rounded-md"
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
       <motion.div
         variants={container}
         initial="hidden"
         animate="show"
-        className="grid md:grid-cols-2 gap-8"
+        className="grid sm:grid-cols-1 md:grid-cols-2 gap-6 md:gap-8"
       >
         {certifications.map((cert) => (
           <motion.div
@@ -210,7 +251,7 @@ export function CertificationsPage() {
             variants={item}
             className="bg-white dark:bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300"
           >
-            <div className="relative h-48 overflow-hidden">
+            <div className="relative h-40 sm:h-48 overflow-hidden">
               <img
                 src={cert.image}
                 alt={cert.title}
@@ -218,7 +259,9 @@ export function CertificationsPage() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
               <div className="absolute bottom-4 left-4 right-4">
-                <h2 className="text-xl font-bold text-white mb-1">{cert.title}</h2>
+                <h2 className="text-lg sm:text-xl font-bold text-white mb-1">
+                  {cert.title}
+                </h2>
                 <div className="flex items-center gap-2 text-white/90">
                   <Award className="w-4 h-4" />
                   {cert.organization}
@@ -226,17 +269,17 @@ export function CertificationsPage() {
               </div>
             </div>
 
-            <div className="p-6">
-              <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300 mb-4">
+            <div className="p-4 sm:p-6">
+              <div className="flex items-center gap-2 text-gray-600 dark:text-gray-300 mb-3 sm:mb-4">
                 <Calendar className="w-4 h-4" />
                 {cert.date}
               </div>
 
-              <p className="text-gray-600 dark:text-gray-300 mb-4">
+              <p className="text-sm sm:text-base text-gray-600 dark:text-gray-300 mb-4">
                 {cert.description}
               </p>
 
-              <div className="flex flex-wrap gap-2 mb-6">
+              <div className="flex flex-wrap gap-2 mb-4">
                 {cert.skills.map((skill) => (
                   <span
                     key={skill}
@@ -247,15 +290,34 @@ export function CertificationsPage() {
                 ))}
               </div>
 
-              <a
-                href={cert.credentialUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 transition-colors duration-300"
-              >
-                <ExternalLink className="w-4 h-4" />
-                Verify Credential
-              </a>
+              <div className="flex flex-wrap items-center gap-3">
+                <button
+                  onClick={() => setPreviewUrl(cert.image)}
+                  className="inline-flex items-center gap-2 text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 transition-colors duration-300"
+                >
+                  <Eye className="w-4 h-4" />
+                  Preview
+                </button>
+
+                <a
+                  href={cert.credentialUrl}
+                  download
+                  className="inline-flex items-center gap-2 text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 transition-colors duration-300"
+                >
+                  <Download className="w-4 h-4" />
+                  Download
+                </a>
+
+                <a
+                  href={cert.credentialUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-purple-600 dark:text-purple-400 hover:text-purple-700 dark:hover:text-purple-300 transition-colors duration-300"
+                >
+                  <ExternalLink className="w-4 h-4" />
+                  Verify Credential
+                </a>
+              </div>
             </div>
           </motion.div>
         ))}
