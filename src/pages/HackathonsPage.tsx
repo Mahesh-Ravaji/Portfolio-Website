@@ -5,12 +5,12 @@ import { cn } from '../lib/utils';
 
 const hackathons = [
   {
-    name: "Global Tech Hackathon 2023",
+    name: "Smart India Hackethon 2024",
     date: "December 2023",
     teamSize: 4,
     position: 1,
     project: {
-      name: "EcoTrack",
+      name: "TechyGuys",
       description: "AI-powered solution for tracking and reducing carbon footprint",
       demo: "https://demo.example.com",
       github: "https://github.com",
@@ -20,7 +20,7 @@ const hackathons = [
     technologies: ["React", "TensorFlow.js", "Node.js", "MongoDB"]
   },
   {
-    name: "HealthTech Hackathon",
+    name: "Kavach Hackathon",
     date: "October 2023",
     teamSize: 3,
     position: 1,

@@ -5,13 +5,13 @@ import { cn } from '../lib/utils';
 
 const internships = [
   {
-    company: "Tech Corp",
-    role: "Software Engineering Intern",
-    duration: "Jun 2023 - Aug 2023",
-    description: "Developed and maintained microservices using Node.js and Docker. Implemented real-time analytics dashboard.",
+    company: "Ninjabytes Technologies",
+    role: "Front-End Developer Intern",
+    duration: "January 2024 - March 2024",
+    description: "Contributed in Building Fronted webpage using React .",
     logo: "https://images.unsplash.com/photo-1496200186974-4293800e2c20?w=200&h=200&fit=crop",
     certificate: "https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?w=800&h=400&fit=crop",
-    technologies: ["Node.js", "Docker", "React", "MongoDB"]
+    technologies: [ "Docker", "React", "MongoDB"]
   },
   {
     company: "Data Systems Inc",
