@@ -7,20 +7,20 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    value: "+1 (555) 123-4567",
-    href: "tel:+15551234567"
+    value: "+91 8208556327",
+    href: "tel:+8208556327"
   },
   {
     icon: Mail,
     title: "Email",
-    value: "contact@example.com",
-    href: "mailto:contact@example.com"
+    value: "ravajimahesh8@gmail.com",
+    href: "ravajimahesh8@gmail.com"
   },
   {
     icon: MapPin,
     title: "Location",
     value: "San Francisco, CA",
-    href: "https://maps.google.com"
+    href: "https://maps.google.com/Pune"
   }
 ];
 

@@ -1,6 +1,16 @@
 import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, FileText, ExternalLink } from 'lucide-react';
 import { cn } from '../lib/utils';
+// import profilePic from 'src/assets/images/passport_photo_Mahii.jpg';
+import profilePic from '../assets/images/passport_photo_Mahii.jpg';
+
+
+<img
+  src={profilePic}
+  alt="Mahesh Ravaji"
+  className="w-32 h-32 rounded-full object-cover"
+/>
+
 
 const socialLinks = [
   {
@@ -17,13 +27,13 @@ const socialLinks = [
   },
   {
     Icon: Mail,
-    href: "ravajimahesh8@gmail.com",
+    href: "mailto:ravajimahesh8@gmail.com", // Added mailto: protocol
     label: "Email Contact",
     className: "hover:text-red-600 dark:hover:text-red-400"
   },
   {
     Icon: FileText,
-    href: "/resume.pdf",
+    href: "/certificates/general/Certificates-pdf/Mahesh_Update_Resume_v3.pdf", // Use relative path to your PDF
     label: "Download Resume",
     className: "hover:text-green-600 dark:hover:text-green-400"
   }
@@ -69,7 +79,7 @@ export function Hero() {
           >
             <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full blur-xl opacity-25 animate-pulse" />
             <img
-              src="src/assets/images/passport photo Mahii.jpg"
+              src="/public/certificates/general/passport_photo_Mahii.jpg"
               alt="Profile"
               className="w-32 h-32 rounded-full relative z-10 border-4 border-white dark:border-gray-800 shadow-xl"
             />
