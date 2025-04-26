@@ -19,7 +19,7 @@ const contactInfo = [
   {
     icon: MapPin,
     title: "Location",
-    value: "San Francisco, CA",
+    value: "Pune , India",
     href: "https://maps.google.com/Pune"
   }
 ];

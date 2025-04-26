@@ -1,36 +1,42 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
-import { ExternalLink, Github, Globe } from 'lucide-react';
+import { Github } from 'lucide-react';
 import { cn } from '../lib/utils';
 
 const projects = [
   {
     title: "E-Commerce Platform",
-    description: "A full-stack e-commerce solution with real-time inventory management",
+    description: "A complete e-commerce web application with product listing, cart management, order tracking, and secure payment integration.",
     image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=400&fit=crop",
-    tags: ["React", "Node.js", "MongoDB", "Redux"],
+    tags: ["React", "Node.js", "Express", "MongoDB", "Redux", "Stripe API"],
     links: {
-      demo: "https://demo.example.com",
       github: "https://github.com"
     }
   },
   {
-    title: "AI Chat Application",
-    description: "Real-time chat app with AI-powered responses and language translation",
+    title: "3-Tier Application Deployment using Jenkins Pipeline",
+    description: "Automated the deployment of a 3-tier web application (frontend, backend, database) using Jenkins CI/CD pipelines on AWS infrastructure.",
     image: "https://images.unsplash.com/photo-1587560699334-cc4ff634909a?w=800&h=400&fit=crop",
-    tags: ["Next.js", "OpenAI", "Socket.io", "TypeScript"],
+    tags: ["Jenkins", "AWS EC2", "Nginx", "Tomcat", "MySQL", "Shell Scripting"],
     links: {
-      demo: "https://demo.example.com",
       github: "https://github.com"
     }
   },
   {
-    title: "Cloud Dashboard",
-    description: "Analytics dashboard for monitoring cloud resources and costs",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
-    tags: ["Vue.js", "AWS", "D3.js", "Tailwind"],
+    title: "2-Tier Application Deployment on DockerHub",
+    description: "Containerized a 2-tier web application and deployed it via DockerHub, ensuring seamless scalability and simplified deployment workflows.",
+    image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=400&fit=crop",
+    tags: ["Docker", "DockerHub", "Nginx", "Node.js", "MongoDB"],
     links: {
-      demo: "https://demo.example.com",
+      github: "https://github.com"
+    }
+  },
+  {
+    title: "AWS VPC Creation Using Terraform (IaC)",
+    description: "Designed and provisioned a custom AWS Virtual Private Cloud (VPC) using Terraform scripts, implementing best practices for networking and security.",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
+    tags: ["Terraform", "AWS VPC", "Infrastructure as Code", "Cloud Networking"],
+    links: {
       github: "https://github.com"
     }
   }
@@ -92,20 +98,6 @@ export function Projects() {
                   </div>
 
                   <div className="flex gap-4">
-                    <a
-                      href={project.links.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className={cn(
-                        "flex items-center gap-1 text-sm font-medium",
-                        "text-purple-600 dark:text-purple-400",
-                        "hover:text-purple-700 dark:hover:text-purple-300",
-                        "transition-colors duration-300"
-                      )}
-                    >
-                      <Globe className="w-4 h-4" />
-                      Live Demo
-                    </a>
                     <a
                       href={project.links.github}
                       target="_blank"

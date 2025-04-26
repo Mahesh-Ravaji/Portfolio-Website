@@ -7,7 +7,7 @@ function ProjectCube({ position, imageUrl, title }: any) {
   const meshRef = useRef<THREE.Mesh>();
   const texture = useLoader(THREE.TextureLoader, imageUrl);
 
-  useFrame((state) => {
+  useFrame(() => {
     if (!meshRef.current) return;
     meshRef.current.rotation.y += 0.01;
   });
@@ -53,12 +53,17 @@ function Scene() {
       position: [-4, 0, 0]
     },
     {
-      title: "AI Chat Application",
+      title: "DevOps 3 Tier applicaiton deployment using CI/CD Pipeline ",
       image: "https://images.unsplash.com/photo-1587560699334-cc4ff634909a?w=800&h=400&fit=crop",
       position: [0, 0, 0]
     },
     {
-      title: "Cloud Dashboard",
+      title: "2 Tier application deployment on Docker ",
+      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
+      position: [4, 0, 0]
+    },
+    {
+      title: "2 Tier application deployment on DockerHub ",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
       position: [4, 0, 0]
     }

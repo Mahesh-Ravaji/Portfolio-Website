@@ -4,30 +4,30 @@ import { Calendar, Clock, ArrowRight } from 'lucide-react';
 import { cn } from '../lib/utils';
 
 const posts = [
-  {
-    title: "Building Scalable Web Applications with React and TypeScript",
-    excerpt: "Learn how to create maintainable and type-safe React applications using TypeScript",
-    date: "Mar 15, 2024",
-    readTime: "8 min read",
-    image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=400&fit=crop",
-    tags: ["React", "TypeScript", "Web Development"]
-  },
-  {
-    title: "Cloud Native Development: A Comprehensive Guide",
-    excerpt: "Explore modern cloud-native development practices and technologies",
-    date: "Mar 10, 2024",
-    readTime: "12 min read",
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop",
-    tags: ["Cloud", "DevOps", "Kubernetes"]
-  },
-  {
-    title: "Getting Started with Machine Learning in JavaScript",
-    excerpt: "Introduction to machine learning concepts using TensorFlow.js",
-    date: "Mar 5, 2024",
-    readTime: "10 min read",
-    image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800&h=400&fit=crop",
-    tags: ["Machine Learning", "JavaScript", "AI"]
-  }
+  // {
+  //   title: "Building Scalable Web Applications with React and TypeScript",
+  //   excerpt: "Learn how to create maintainable and type-safe React applications using TypeScript",
+  //   date: "Mar 15, 2024",
+  //   readTime: "8 min read",
+  //   image: "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=800&h=400&fit=crop",
+  //   tags: ["React", "TypeScript", "Web Development"]
+  // },
+  // {
+  //   title: "Cloud Native Development: A Comprehensive Guide",
+  //   excerpt: "Explore modern cloud-native development practices and technologies",
+  //   date: "Mar 10, 2024",
+  //   readTime: "12 min read",
+  //   image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=400&fit=crop",
+  //   tags: ["Cloud", "DevOps", "Kubernetes"]
+  // },
+  // {
+  //   title: "Getting Started with Machine Learning in JavaScript",
+  //   excerpt: "Introduction to machine learning concepts using TensorFlow.js",
+  //   date: "Mar 5, 2024",
+  //   readTime: "10 min read",
+  //   image: "https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800&h=400&fit=crop",
+  //   tags: ["Machine Learning", "JavaScript", "AI"]
+  // }
 ];
 
 export function Blog() {
@@ -46,9 +46,9 @@ export function Blog() {
           transition={{ duration: 0.6 }}
           className="max-w-6xl mx-auto"
         >
-          <h2 className="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400">
+          {/* <h2 className="text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400">
             Latest Blog Posts
-          </h2>
+          </h2> */}
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {posts.map((post, index) => (
