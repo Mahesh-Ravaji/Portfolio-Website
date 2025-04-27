@@ -2,36 +2,84 @@ import { motion } from 'framer-motion';
 import { Github, Globe, Star } from 'lucide-react';
 import { PageLayout } from '../components/PageLayout';
 import { cn } from '../lib/utils';
+import { useState } from 'react';
+
+const categories = ["All", "Web Apps", "DevOps", "Cloud"];
+
 
 const projects = [
   {
+    title: "Campus Lost & Found",
+    description: "A web app where students can report lost or found items on campus, featuring user authentication, image uploads, and notification system.",
+    image: "/images/campus-lost-found.png",
+    techStack: ["React", "TypeScript", "Tailwind", "Node.js", "MongoDB"],
+    github: "https://github.com/yourusername/campus-lost-found",
+    demo: "https://campus-lost-found.example.com",
+    featured: true,
+    category: "Web Apps",
+  },
+  {
     title: "E-Commerce Platform",
     description: "A full-stack e-commerce solution with real-time inventory management, secure payments, and admin dashboard.",
-    image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=400&fit=crop",
+    image: "/images/ecommerce-platform.png",
     techStack: ["React", "Node.js", "MongoDB", "Redux", "Stripe"],
-    github: "https://github.com",
-    demo: "https://demo.example.com",
-    featured: true
+    github: "https://github.com/yourusername/ecommerce-platform",
+    demo: "https://ecommerce-platform.example.com",
+    featured: true,
+    category: "Web Apps",
   },
   {
     title: "AI Chat Application",
-    description: "Real-time chat application with AI-powered responses and language translation capabilities.",
-    image: "https://images.unsplash.com/photo-1587560699334-cc4ff634909a?w=800&h=400&fit=crop",
-    techStack: ["Next.js", "OpenAI", "Socket.io", "TypeScript"],
-    github: "https://github.com",
-    demo: "https://demo.example.com",
-    featured: true
+    description: "Real-time chat app with AI-powered smart replies and multilingual support.",
+    image: "/images/ai-chat-app.png",
+    techStack: ["Next.js", "OpenAI API", "Socket.io", "TypeScript"],
+    github: "https://github.com/yourusername/ai-chat-application",
+    demo: "https://ai-chat-app.example.com",
+    featured: true,
+    category: "Web Apps",
   },
   {
-    title: "Cloud Dashboard",
-    description: "Analytics dashboard for monitoring cloud resources and costs with detailed insights.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
-    techStack: ["Vue.js", "AWS", "D3.js", "Tailwind"],
-    github: "https://github.com",
-    demo: "https://demo.example.com",
-    featured: false
-  }
+    title: "Cloud Cost Dashboard",
+    description: "Interactive analytics dashboard to monitor and optimize cloud costs and resources.",
+    image: "/images/cloud-dashboard.png",
+    techStack: ["Vue.js", "AWS", "D3.js", "TailwindCSS"],
+    github: "https://github.com/yourusername/cloud-dashboard",
+    demo: "https://cloud-dashboard.example.com",
+    featured: false,
+    category: "Cloud",
+  },
+  {
+    title: "DevOps Portfolio (100DaysOfDevOps)",
+    description: "A curated portfolio showcasing automation scripts, CI/CD pipelines, Kubernetes setups and monitoring tools from my #100DaysOfDevOps challenge.",
+    image: "/images/devops-portfolio.png",
+    techStack: ["Docker", "Jenkins", "Terraform", "Kubernetes", "AWS", "Ansible"],
+    github: "https://github.com/yourusername/devops-portfolio",
+    demo: "https://devops-portfolio.example.com",
+    featured: true,
+    category: "DevOps",
+  },
+  {
+    title: "Server Automation Scripts",
+    description: "A collection of Bash, Ansible, and Python scripts to automate server setup, backups, and monitoring.",
+    image: "/images/server-automation.png",
+    techStack: ["Bash", "Python", "Ansible"],
+    github: "https://github.com/yourusername/server-automation",
+    demo: "https://server-automation.example.com",
+    featured: false,
+    category: "DevOps",
+  },
+  {
+    title: "Containerized Microservices",
+    description: "Built microservices architecture using Docker Compose and Kubernetes deployments for scalability.",
+    image: "/images/microservices-docker.png",
+    techStack: ["Docker", "Kubernetes", "Node.js", "MongoDB"],
+    github: "https://github.com/yourusername/containerized-microservices",
+    demo: "https://microservices.example.com",
+    featured: false,
+    category: "DevOps",
+  },
 ];
+
 
 const container = {
   hidden: { opacity: 0 },
@@ -49,15 +97,42 @@ const item = {
 };
 
 export function ProjectsPage() {
+  const [activeCategory, setActiveCategory] = useState("All");
+
+  const filteredProjects = activeCategory === "All"
+  ? projects
+  : projects.filter((project) =>
+      project.category.toLowerCase() === activeCategory.toLowerCase()
+    );
+
   return (
     <PageLayout title="My Projects">
+      {/* Category Buttons */}
+      <div className="flex justify-center space-x-4 mb-12">
+      {categories.map((category) => (
+  <button
+    key={category}
+    onClick={() => setActiveCategory(category)}
+    className={cn(
+      "px-4 py-2 rounded-full text-sm font-medium border transition",
+      activeCategory === category
+        ? "bg-purple-600 text-white border-purple-600"
+        : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+    )}
+  >
+    {category}
+  </button>
+))}
+      </div>
+
+      {/* Project Cards */}
       <motion.div
         variants={container}
         initial="hidden"
         animate="show"
         className="grid md:grid-cols-2 gap-8"
       >
-        {projects.map((project) => (
+        {filteredProjects.map((project) => (
           <motion.div
             key={project.title}
             variants={item}

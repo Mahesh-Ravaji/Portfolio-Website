@@ -20,6 +20,28 @@ image: "/certificates/general/Prometheus_Certified_Associate_[PCA]_Course_Comple
 image: "/certificates/general/Terrafor_Associate_Certification_by_Kodekloud.png"
 
 
+
+interface Certificate {
+  title: string;
+  image: string;
+}
+
+// Example of how to use motion.img with a certificate
+// This will be used inside the component function
+// Using this component in the certifications map below
+const CertificateImage = ({ cert }: { cert: Certificate }) => (
+  <motion.img
+    src={cert.image}
+    alt={cert.title}
+    loading="lazy"
+    className="w-full h-full object-cover"
+    initial={{ opacity: 0, scale: 0.8 }}
+    whileInView={{ opacity: 1, scale: 1 }}
+    transition={{ duration: 0.5, ease: "easeOut" }}
+    viewport={{ once: true }}
+  />
+);
+
 const certifications = [
   {
     title: "Microsoft Azure Administrator",
