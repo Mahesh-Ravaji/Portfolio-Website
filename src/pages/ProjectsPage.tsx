@@ -24,7 +24,7 @@ const projects = [
     image: "src/assets/images/DevOps_Project_100.jpeg",
     techStack: ["React", "Node.js", "MongoDB", "Redux", "Stripe"],
     github: "https://github.com/yourusername/ecommerce-platform",
-    // demo: "https://ecommerce-platform.example.com",
+    demo: "https://ecommerce-platform.example.com",
     featured: true,
     category: "Web Apps",
   },
@@ -38,16 +38,7 @@ const projects = [
     featured: true,
     category: "Web Apps",
   },
-  {
-    title: "Cloud Cost Dashboard",
-    description: "Interactive analytics dashboard to monitor and optimize cloud costs and resources.",
-    image: "src/assets/images/cost.jpeg",
-    techStack: ["Vue.js", "AWS", "D3.js", "TailwindCSS"],
-    github: "https://github.com/yourusername/cloud-dashboard",
-    demo: "https://cloud-dashboard.example.com",
-    featured: false,
-    category: "Cloud",
-  },
+
   {
     title: "DevOps Portfolio (100DaysOfDevOps)",
     description: "A curated portfolio showcasing automation scripts, CI/CD pipelines, Kubernetes setups and monitoring tools from my #100DaysOfDevOps challenge.",
@@ -77,6 +68,16 @@ const projects = [
     demo: "https://microservices.example.com",
     featured: false,
     category: "DevOps",
+  },
+  {
+    title: "Cloud Cost Dashboard",
+    description: "Interactive analytics dashboard to monitor and optimize cloud costs and resources.",
+    image: "src/assets/images/cost.jpeg",
+    techStack: ["Vue.js", "AWS", "D3.js", "TailwindCSS"],
+    github: "https://github.com/yourusername/cloud-dashboard",
+    demo: "https://cloud-dashboard.example.com",
+    featured: false,
+    category: "Cloud",
   },
 ];
 

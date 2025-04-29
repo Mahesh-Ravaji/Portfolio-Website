@@ -14,26 +14,26 @@ const skills = [
 const achievements = [
   {
     icon: Code2,
-    title: "20+ Projects",
-    description: "Completed various web and mobile applications",
+    title: "10+ Projects",
+    description: "Completed various web , Cloud and Devops projects",
     link: "/projects"
   },
   {
     icon: Brain,
     title: "10+ Certifications",
-    description: "Including AWS, Azure, and Google Cloud",
+    description: "Including AWS, Azure, and DevOps",
     link: "/certifications"
   },
   {
     icon: Rocket,
-    title: "3 Internships",
+    title: "2 Internships",
     description: "At leading tech companies",
     link: "/internships"
   },
   {
     icon: Award,
-    title: "5 Hackathons",
-    description: "Won first place in 2 national competitions",
+    title: "2 Hackathons",
+    description: "Participated in Hackethons",
     link: "/hackathons"
   }
 ];
