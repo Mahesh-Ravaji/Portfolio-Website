@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Github, Linkedin, Mail, FileText, ExternalLink } from 'lucide-react';
 import { cn } from '../lib/utils';
 // import profilePic from 'src/assets/images/passport_photo_Mahii.jpg';
-import profilePic from '../assets/images/passport_photo_Mahii.jpg';
+import profilePic from 'certificates/general/images/passport_photo_Mahii.jpg';
 
 
 <img
