@@ -79,7 +79,7 @@ export function Hero() {
           >
             <div className="absolute inset-0 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full blur-xl opacity-25 animate-pulse" />
             <img
-              src="/public/certificates/general/passport_photo_Mahii.jpg"
+              src="public/certificates/general/images/passport_photo_Mahii.jpg"
               alt="Profile"
               className="w-32 h-32 rounded-full relative z-10 border-4 border-white dark:border-gray-800 shadow-xl"
             />
