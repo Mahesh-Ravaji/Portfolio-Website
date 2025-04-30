@@ -11,7 +11,7 @@ const projects = [
   {
     title: "Campus Lost & Found",
     description: "A web app where students can report lost or found items on campus, featuring user authentication, image uploads, and notification system.",
-    image: "src/assets/images/campus_lost_find.jpeg",
+    image: "public/certificates/general/images/campus_lost_find.jpeg",
     techStack: ["React", "TypeScript", "Tailwind", "Node.js", "MongoDB"],
     github: "https://github.com/yourusername/campus-lost-found",
     demo: "https://campus-lost-found.example.com",
@@ -31,7 +31,7 @@ const projects = [
   {
     title: "AI Chat Application",
     description: "Real-time chat app with AI-powered smart replies and multilingual support.",
-    image: "src/assets/images/ai.jpeg",
+    image: "public/certificates/general/images/ai.jpeg",
     techStack: ["Next.js", "OpenAI API", "Socket.io", "TypeScript"],
     github: "https://github.com/yourusername/ai-chat-application",
     demo: "https://ai-chat-app.example.com",
@@ -42,7 +42,7 @@ const projects = [
   {
     title: "DevOps Portfolio (100DaysOfDevOps)",
     description: "A curated portfolio showcasing automation scripts, CI/CD pipelines, Kubernetes setups and monitoring tools from my #100DaysOfDevOps challenge.",
-    image: "src/assets/images/DevOps_Project_100.jpeg",
+    image: "public/certificates/general/images/DevOps_Project_100.jpeg",
     techStack: ["Docker", "Jenkins", "Terraform", "Kubernetes", "AWS", "Ansible"],
     github: "https://github.com/yourusername/devops-portfolio",
     demo: "https://devops-portfolio.example.com",
@@ -52,7 +52,7 @@ const projects = [
   {
     title: "Server Automation Scripts",
     description: "A collection of Bash, Ansible, and Python scripts to automate server setup, backups, and monitoring.",
-    image: "src/assets/images/Scrpt-for-server.jpeg",
+    image: "public/certificates/general/images/Scrpt-for-server.jpeg",
     techStack: ["Bash", "Python", "Ansible"],
     github: "https://github.com/yourusername/server-automation",
     demo: "https://server-automation.example.com",
@@ -62,7 +62,7 @@ const projects = [
   {
     title: "Containerized Microservices",
     description: "Built microservices architecture using Docker Compose and Kubernetes deployments for scalability.",
-    image: "src/assets/images/k8s.jpeg",
+    image: "public/certificates/general/images/k8s.jpeg",
     techStack: ["Docker", "Kubernetes", "Node.js", "MongoDB"],
     github: "https://github.com/yourusername/containerized-microservices",
     demo: "https://microservices.example.com",
@@ -72,7 +72,7 @@ const projects = [
   {
     title: "Cloud Cost Dashboard",
     description: "Interactive analytics dashboard to monitor and optimize cloud costs and resources.",
-    image: "src/assets/images/cost.jpeg",
+    image: "public/certificates/general/images/cost.jpeg",
     techStack: ["Vue.js", "AWS", "D3.js", "TailwindCSS"],
     github: "https://github.com/yourusername/cloud-dashboard",
     demo: "https://cloud-dashboard.example.com",
