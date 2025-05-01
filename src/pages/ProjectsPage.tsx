@@ -11,7 +11,7 @@ const projects = [
   {
     title: "Campus Lost & Found",
     description: "A web app where students can report lost or found items on campus, featuring user authentication, image uploads, and notification system.",
-    image: "/certificates/general/images/campus_lost_find.jpeg",
+    image: "./certificates/general/images/campus_lost_find.jpeg",
     techStack: ["React", "TypeScript", "Tailwind", "Node.js", "MongoDB"],
     github: "https://github.com/yourusername/campus-lost-found",
     demo: "https://campus-lost-found.example.com",
@@ -21,7 +21,7 @@ const projects = [
   {
     title: "E-Commerce Platform",
     description: "A full-stack e-commerce solution with real-time inventory management, secure payments, and admin dashboard.",
-    image: "src/assets/images/DevOps_Project_100.jpeg",
+    image: "./certificates/general/images/DevOps_Project_100.jpeg",
     techStack: ["React", "Node.js", "MongoDB", "Redux", "Stripe"],
     github: "https://github.com/yourusername/ecommerce-platform",
     demo: "https://ecommerce-platform.example.com",
@@ -31,7 +31,7 @@ const projects = [
   {
     title: "AI Chat Application",
     description: "Real-time chat app with AI-powered smart replies and multilingual support.",
-    image: "/certificates/general/images/ai.jpeg",
+    image: "./certificates/general/images/ai.jpeg",
     techStack: ["Next.js", "OpenAI API", "Socket.io", "TypeScript"],
     github: "https://github.com/yourusername/ai-chat-application",
     demo: "https://ai-chat-app.example.com",
@@ -52,7 +52,7 @@ const projects = [
   {
     title: "Server Automation Scripts",
     description: "A collection of Bash, Ansible, and Python scripts to automate server setup, backups, and monitoring.",
-    image: "/certificates/general/images/Scrpt-for-server.jpeg",
+    image: "./certificates/general/images/Scrpt-for-server.jpeg",
     techStack: ["Bash", "Python", "Ansible"],
     github: "https://github.com/yourusername/server-automation",
     demo: "https://server-automation.example.com",
@@ -62,7 +62,7 @@ const projects = [
   {
     title: "Containerized Microservices",
     description: "Built microservices architecture using Docker Compose and Kubernetes deployments for scalability.",
-    image: "/certificates/general/images/k8s.jpeg",
+    image: "./certificates/general/images/k8s.jpeg",
     techStack: ["Docker", "Kubernetes", "Node.js", "MongoDB"],
     github: "https://github.com/yourusername/containerized-microservices",
     demo: "https://microservices.example.com",
@@ -72,13 +72,22 @@ const projects = [
   {
     title: "Cloud Cost Dashboard",
     description: "Interactive analytics dashboard to monitor and optimize cloud costs and resources.",
-    image: "/certificates/general/images/cost.jpeg",
+    image: "./certificates/general/images/cost.jpeg",
     techStack: ["Vue.js", "AWS", "D3.js", "TailwindCSS"],
     github: "https://github.com/yourusername/cloud-dashboard",
     demo: "https://cloud-dashboard.example.com",
     featured: false,
     category: "Cloud",
   },
+  {
+        title: "AWS VPC Creation Using Terraform (IaC)",
+        description: "Designed and provisioned a custom AWS Virtual Private Cloud (VPC) using Terraform scripts, implementing best practices for networking and security.",
+        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
+        tags: ["Terraform", "AWS VPC", "Infrastructure as Code", "Cloud Networking"],
+        links: {
+          github: "https://github.com/Mahesh-Ravaji/Terraform-Project"
+        }
+      }
 ];
 
 
