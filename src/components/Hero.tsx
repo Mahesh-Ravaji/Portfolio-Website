@@ -20,7 +20,7 @@ const socialLinks = [
     className: "hover:text-purple-600 dark:hover:text-purple-400"
   },
   {
-    Icon: Linkedin,
+    Icon: Linkedin, 
     href: "https://linkedin.com/in/mahesh-ravaji",
     label: "LinkedIn Profile",
     className: "hover:text-blue-600 dark:hover:text-blue-400"

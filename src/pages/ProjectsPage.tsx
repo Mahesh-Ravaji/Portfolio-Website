@@ -6,7 +6,6 @@ import { useState } from 'react';
 
 const categories = ["All", "Web Apps", "DevOps", "Cloud"];
 
-
 const projects = [
   {
     title: "Campus Lost & Found",
@@ -38,7 +37,6 @@ const projects = [
     featured: true,
     category: "Web Apps",
   },
-
   {
     title: "DevOps Portfolio (100DaysOfDevOps)",
     description: "A curated portfolio showcasing automation scripts, CI/CD pipelines, Kubernetes setups and monitoring tools from my #100DaysOfDevOps challenge.",
@@ -80,16 +78,16 @@ const projects = [
     category: "Cloud",
   },
   {
-        title: "AWS VPC Creation Using Terraform (IaC)",
-        description: "Designed and provisioned a custom AWS Virtual Private Cloud (VPC) using Terraform scripts, implementing best practices for networking and security.",
-        image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
-        tags: ["Terraform", "AWS VPC", "Infrastructure as Code", "Cloud Networking"],
-        links: {
-          github: "https://github.com/Mahesh-Ravaji/Terraform-Project"
-        }
-      }
+    title: "AWS VPC Creation Using Terraform (IaC)",
+    description: "Designed and provisioned a custom AWS Virtual Private Cloud (VPC) using Terraform scripts, implementing best practices for networking and security.",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=400&fit=crop",
+    techStack: ["Terraform", "AWS VPC", "Infrastructure as Code", "Cloud Networking"],
+    github: "https://github.com/Mahesh-Ravaji/Terraform-Project",
+    demo: "",
+    featured: false,
+    category: "Cloud",
+  }
 ];
-
 
 const container = {
   hidden: { opacity: 0 },
@@ -110,29 +108,29 @@ export function ProjectsPage() {
   const [activeCategory, setActiveCategory] = useState("All");
 
   const filteredProjects = activeCategory === "All"
-  ? projects
-  : projects.filter((project) =>
-      project.category.toLowerCase() === activeCategory.toLowerCase()
-    );
+    ? projects
+    : projects.filter((project) =>
+        project.category?.toLowerCase() === activeCategory.toLowerCase()
+      );
 
   return (
     <PageLayout title="My Projects">
       {/* Category Buttons */}
       <div className="flex justify-center space-x-4 mb-12">
-      {categories.map((category) => (
-  <button
-    key={category}
-    onClick={() => setActiveCategory(category)}
-    className={cn(
-      "px-4 py-2 rounded-full text-sm font-medium border transition",
-      activeCategory === category
-        ? "bg-purple-600 text-white border-purple-600"
-        : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
-    )}
-  >
-    {category}
-  </button>
-))}
+        {categories.map((category) => (
+          <button
+            key={category}
+            onClick={() => setActiveCategory(category)}
+            className={cn(
+              "px-4 py-2 rounded-full text-sm font-medium border transition",
+              activeCategory === category
+                ? "bg-purple-600 text-white border-purple-600"
+                : "bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700"
+            )}
+          >
+            {category}
+          </button>
+        ))}
       </div>
 
       {/* Project Cards */}
@@ -142,7 +140,7 @@ export function ProjectsPage() {
         animate="show"
         className="grid md:grid-cols-2 gap-8"
       >
-        {filteredProjects.map((project) => (
+        {filteredProjects?.map((project) => (
           <motion.div
             key={project.title}
             variants={item}
@@ -183,24 +181,28 @@ export function ProjectsPage() {
               </div>
 
               <div className="flex gap-4">
-                <a
-                  href={project.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-600 text-white hover:bg-purple-700 transition-colors duration-300"
-                >
-                  <Globe className="w-4 h-4" />
-                  Live Demo
-                </a>
-                <a
-                  href={project.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors duration-300"
-                >
-                  <Github className="w-4 h-4" />
-                  Source Code
-                </a>
+                {project.demo && (
+                  <a
+                    href={project.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-4 py-2 rounded-lg bg-purple-600 text-white hover:bg-purple-700 transition-colors duration-300"
+                  >
+                    <Globe className="w-4 h-4" />
+                    Live Demo
+                  </a>
+                )}
+                {project.github && (
+                  <a
+                    href={project.github}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-4 py-2 rounded-lg border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700/50 transition-colors duration-300"
+                  >
+                    <Github className="w-4 h-4" />
+                    Source Code
+                  </a>
+                )}
               </div>
             </div>
           </motion.div>
